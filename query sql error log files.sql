@@ -4,7 +4,7 @@
 
 
 EXEC Xp_readerrorlog    0,    1,    N'dbcc',    N'traceon'  
--- first 0 means look in latest file , next 1 means error log 2 means agent log
+-- first parameter 0 asks fucntion to look in latest log file , next parameter 1 indicates use sql error log change this to 2 to use sql agent log
 
 exec xp_readerrorlog 0, 1, N'DBCC', N'3604', '20200401', '20200401 18:00';
 exec xp_readerrorlog 0, 1, N'DBCC', N'3604', '20200401', '20200401 12:00', 'DESC'
@@ -21,9 +21,19 @@ print @starttime
 print @endtime
 
 EXEC Xp_readerrorlog    0,    1,   N'' ,    N'' , @starttime , @endtime,'desc'
--- first 0 means look in latest file , next 1 means error log 2 means agent log
+-- first parameter 0 asks fucntion to look in latest log file , next parameter 1 indicates use sql error log change this to 2 to use sql agent log
 
---AG faliover message
- --The state of the local availability replica in availability group
+/*
+Cheatsheet errors to find issues quicker
+--AG faliover message 
+The state of the local availability replica in availability group
+
+-- Find SQL port number
+port
+
+--Find if spn if spn is registered
+spn
+*/
+
  
  

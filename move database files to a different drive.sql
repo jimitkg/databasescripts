@@ -19,7 +19,7 @@ MODIFY FILE (name='dbname'
              ,filename='E:\db.mdf')
 
 			 ALTER DATABASE epo
-MODIFY FILE (name='epo_log'
+MODIFY FILE (name='db_log'
              ,filename='E:\db_log.LDF')
 
 
